@@ -5,19 +5,25 @@
 <body>
 	<h1>Olá! Thymeleaf configurado!</h1>
 	
-	<form method="POST">
-	<span th:text="${mensagem}"></span>
-	<br />
-		<label>Nome:</label>
-		<input type="text" id="nome" name="nome">
-		<br>
-		<label>Sistema:</label>
-		<input type="text" id="sistema" name="sistema">
-		<br>	
-		<label>Descrição:</label>
-		<textarea rows="3" cols="30" id="descricao" name="descricao"></textarea>
-		<br>		
-		<input type="submit" value="Salvar">
+	<div th:each="erro : ${#fields.detailedErrors('${contagem.*}')}">
+			<span th:text="${erro.message}"></span>
+	</div>
+	
+	<form method="POST" th:object="${contagem}">
+	
+		<span th:text="${mensagem}"></span>
+		
+		<br />
+			<label>Nome:</label>
+			<input type="text" id="nome" th:field="*{nome}">
+			<br>
+			<label>Sistema:</label>
+			<input type="text" id="sistema" th:field="*{sistema}">
+			<br>	
+			<label>Descrição:</label>
+			<textarea rows="3" cols="30" id="observacao" th:field="*{observacao}"></textarea>
+			<br>		
+			<input type="submit" value="Salvar">
 	</form>
 
 

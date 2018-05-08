@@ -15,22 +15,24 @@ import br.jus.trf1.aletheia.model.Contagem;
 public class ContagensController {
 	
 	@RequestMapping("/contagens/novo")
-	public String novo() {
+	public String novo(Contagem contagem) {
 		return "contagem/CadastroContagem";
 	}
 	
 	@RequestMapping(value = "/contagens/novo", method= RequestMethod.POST)
 	public String cadastrar(@Valid Contagem contagem, BindingResult result, Model model, RedirectAttributes attributes){
 		if (result.hasErrors()) {
-			model.addAttribute("mensagem", "Erro no formulário");
-			System.out.println(">>tem erro sim");
-			return "contagem/CadastroContagem";
+			return novo(contagem);
 		}
 		
 		//salvar no BD
 		
 		attributes.addFlashAttribute("mensagem", "Contagem salva com sucesso!");
-		System.out.println("nome: "+ contagem.getNome());		
 		return "redirect:/contagens/novo";
+	}
+	
+	@RequestMapping("/contagens/cadastro")
+	public String cadastro() {
+		return "contagem/cadastro-produto";
 	}
 }
