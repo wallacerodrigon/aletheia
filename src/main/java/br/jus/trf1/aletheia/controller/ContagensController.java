@@ -30,9 +30,5 @@ public class ContagensController {
 		attributes.addFlashAttribute("mensagem", "Contagem salva com sucesso!");
 		return "redirect:/contagens/novo";
 	}
-	
-	@RequestMapping("/contagens/cadastro")
-	public String cadastro() {
-		return "contagem/cadastro-produto";
-	}
+
 }
