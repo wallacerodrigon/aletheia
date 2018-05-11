@@ -34,12 +34,20 @@
 
 					<div class="col-sm-2 form-group">
 						<label for="lote">Lote</label> 
-						<select id="sistema"class="form-control">
-							<option>JANEIRO2018</option>
-							<option>FEVEREIRO2018</option>
-							<option>MARCO2018</option>
-							<option>ABRIL2018</option>
-						</select>
+						<div class="al-field-action">
+							<select id="sistema"class="form-control">
+								<option>JANEIRO2018</option>
+								<option>FEVEREIRO2018</option>
+								<option>MARCO2018</option>
+								<option>ABRIL2018</option>
+							</select>
+							
+							<div class="al-field-action__icon">
+							<a href="#" data-toggle="modal" data-target="#modalCadastroRapidoLote">
+									<i class="glyphicon glyphicon-plus-sign al-glyphicon-large"></i>
+								</a>
+							</div>
+						</div>
 					</div>
 
 					<div class="col-sm-2 form-group">
@@ -190,7 +198,7 @@
 
 			</form>
 		</div>
-
+	<div th:replace="lote/CadastroRapidoLote :: modal"></div>
 </section>
 
 </body>
