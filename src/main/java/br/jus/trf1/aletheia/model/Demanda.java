@@ -4,7 +4,7 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-public class Contagem {
+public class Demanda {
 	
 	@NotBlank(message = "Nome da demanda é obrigatório")
 	private String nome;

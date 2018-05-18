@@ -17,11 +17,11 @@ import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 
-import br.jus.trf1.aletheia.controller.ContagensController;
+import br.jus.trf1.aletheia.controller.DemandasController;
 import nz.net.ultraq.thymeleaf.LayoutDialect;
 
 @Configuration
-@ComponentScan(basePackageClasses = { ContagensController.class })
+@ComponentScan(basePackageClasses = { DemandasController.class })
 @EnableWebMvc
 public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
 
