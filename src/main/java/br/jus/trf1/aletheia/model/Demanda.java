@@ -24,12 +24,12 @@ public class Demanda {
 	private Long codigo;
 	
 	@NotBlank(message = "Nome da demanda é obrigatório")
-	private String nome;
-	
-	@NotNull(message = "O Sistema é obrigatório")
-	@Enumerated(EnumType.STRING)
-	private Sistema sistema;
+	private String nome;	
 
+	@NotNull(message = "A identificação do Sistema é obrigatório")
+	@ManyToOne
+	@JoinColumn(name = "codigo_sistema")
+	private Sistema sistema;
 	
 	@NotNull(message = "A identificação do Lote é obrigatório")
 	@ManyToOne
